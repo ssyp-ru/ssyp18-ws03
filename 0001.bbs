@@ -1,0 +1,12 @@
+* 
+*
+proc f1 (x,y,z)
+local a,b,c
+ a=x^2+y^2+z^2
+ b=abs((x+y)*(x-y))
+ c=sin(x)
+ print a
+ print b
+ print c
+end proc
+

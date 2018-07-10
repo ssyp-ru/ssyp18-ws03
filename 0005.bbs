@@ -1,0 +1,11 @@
+*
+*
+proc f(n)
+  if (n=0) then
+     result=1
+  else
+     result=n*f(n-1)
+  end_if   
+end_proc
+
+     

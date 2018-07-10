@@ -1,0 +1,25 @@
+* 
+*
+proc f1 (x,y,z)
+local a,b,c
+ if (x > 1) then
+    x=x+1
+    y=y+7
+ else
+    x=x+10
+    z=z*4
+    print x
+    if ((x+y)>12) then
+       print "aaa" 
+    else
+       print "bbb"
+    end_if       
+ end_if    
+ a=x^2+y^2+z^2
+ b=abs((x+y)*(x-y))
+ c=sin(x)
+ print a
+ print b
+ print c
+end proc
+

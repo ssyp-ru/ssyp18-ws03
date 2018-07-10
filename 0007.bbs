@@ -1,0 +1,10 @@
+*
+*
+proc sumDig(n)
+  if (n<10) then
+     result=n
+  else    
+     result=(n % 10) + sumDig(n\10)
+  end_if
+end_proc
+  
