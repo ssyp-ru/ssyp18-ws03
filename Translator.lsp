@@ -1,15 +1,4 @@
-
-//
-//  ??????????? ????_Dlg_
-//
-
-
-//
-//  ??????????? ????_Dlg_
-//
-
-(prog nil
-	; Загрузка функции fixArrays
+; Загрузка функции fixArrays
 (rds (strcat (sysHome) "\functions\fixArrays.lsp"))
 
 ; Загрузка функции conversion
@@ -70,7 +59,7 @@
     (setq funcNames '(sin cos log exp atn asn acs sh ch sqr sign abs ask))
 	(let ((res "") (listLines ()) (currentList ()) (bracketsStack ()) (currentLine "") (temp NIL))
 		; Открытие файла с исходным кодом
-		(filOpen 'fi nameOfFile _InPut)
+		(filOpen 'fi (sysGetOpenName (sysHome) "Crasic Source Code|*.csc") _InPut)
 
 		; Чтение строк из файла
 		(loop
@@ -534,126 +523,4 @@
 		(sysErase (strcat (sysHome) "\temp.lsp"))
 		(main)
 	)
-)
-	(setq nameOfFile "")
-      (try (dlgDestroy '_Dlg_) except Nil)
-
-
-      (dlgCreate '_Dlg_ 324 241 "" &H8000000F)
-
-      (dlgAddControl '_Dlg_ '_BUT_1 _BUTTON 66 20 169 46 '("Tahoma" 8,25 1 0 0) "???? ??")
-
-      (dlgAddControl '_Dlg_ '_BUT_2 _BUTTON 66 101 169 46 '("Tahoma" 8,25 1 0 0) "?????")
-
-      //
-      // ??? ???? ????_Dlg_
-      //
-
-      (Prog () 
-
-      )
-
-      //
-      // ????? ???? CLICK ?? ??? _BUT_1
-      //
-
-      (defun _BUT_1_Click  Nil ; Загрузить файл
-
-      	(setq nameOfFile (sysgetopenname (sysHome) "Source code Crasic|*.csc|"))
-
-      )
-
-      //
-      //   ????? ?????-???? _BUT_1_Click  ???? _BUT_1
-      //
-
-      (dlgSetEvent '_BUT_1 '_BUT_1_Click )
-
-      //
-      // ????? ???? CLICK ?? ??? _BUT_2
-      //
-
-      (defun _BUT_2_Click  Nil 
-
-       (if nameOfFile
-
-       	)
-
-      )
-
-      //
-      //   ????? ?????-???? _BUT_2_Click  ???? _BUT_2
-      //
-
-      (dlgSetEvent '_BUT_2 '_BUT_2_Click )
-
-
-      //
-      //   ??????????_Dlg_
-      //
-
-      (dlgShow '_Dlg_)
-)
-
-(defun main
-(prog nil
-	(setq nameOfFile "")
-      (try (dlgDestroy '_Dlg_) except Nil)
-
-
-      (dlgCreate '_Dlg_ 324 241 "" &H8000000F)
-
-      (dlgAddControl '_Dlg_ '_BUT_1 _BUTTON 66 20 169 46 '("Tahoma" 8,25 1 0 0) "???? ??")
-
-      (dlgAddControl '_Dlg_ '_BUT_2 _BUTTON 66 101 169 46 '("Tahoma" 8,25 1 0 0) "?????")
-
-      //
-      // ??? ???? ????_Dlg_
-      //
-
-      (Prog () 
-
-      )
-
-      //
-      // ????? ???? CLICK ?? ??? _BUT_1
-      //
-
-      (defun _BUT_1_Click  Nil ; Загрузить файл
-
-      	(setq nameOfFile (sysgetopenname (sysHome) "Source code Crasic|*.csc|"))
-
-      )
-
-      //
-      //   ????? ?????-???? _BUT_1_Click  ???? _BUT_1
-      //
-
-      (dlgSetEvent '_BUT_1 '_BUT_1_Click )
-
-      //
-      // ????? ???? CLICK ?? ??? _BUT_2
-      //
-
-      (defun _BUT_2_Click  Nil 
-
-       (if nameOfFile
-       	(translate)
-       	)
-
-      )
-
-      //
-      //   ????? ?????-???? _BUT_2_Click  ???? _BUT_2
-      //
-
-      (dlgSetEvent '_BUT_2 '_BUT_2_Click )
-
-
-      //
-      //   ??????????_Dlg_
-      //
-
-      (dlgShow '_Dlg_)
-)
 )
